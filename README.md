@@ -26,7 +26,7 @@ Everything runs locally. Nothing is uploaded anywhere.
 
 ```bash
 git clone https://github.com/seanaiworld/desk-health-coach-macos.git
-cd desk-health-coach-macos/practical-ai-workflows
+cd desk-health-coach-macos
 claude
 ```
 
@@ -43,19 +43,21 @@ you verify the reminders actually fire the way you want, and only then does it g
 ## Folder layout — keep it as-is
 
 ```
-desk-health-coach-macos/
-└── practical-ai-workflows/     ← open THIS folder in Claude Code
-    ├── .claude/skills/desk-health/   the skill (setup, edit, coach, library)
-    ├── .agents/skills/desk-health    same skill, for Codex
-    └── desk-health/
-        ├── runtime/                  the fixed engine — never edit
-        └── seed/                     built-in movement + message catalogs
+desk-health-coach-macos/            ← open THIS folder in Claude Code
+├── .claude/skills/desk-health/     the skill (setup, edit, coach, library)
+├── .agents/skills/desk-health      same skill, for Codex
+└── desk-health/
+    ├── runtime/                    the fixed engine — never edit
+    └── seed/                       built-in movement + message catalogs
 ```
 
-Don't move `desk-health/` up to your home folder or flatten the `practical-ai-workflows/` wrapper.
-The runtime computes its project root as `desk-health/..`, so `desk-health/` must always sit inside a
-project folder. Placing it directly in `~` makes `uninstall.sh` target your *global*
-`~/.claude/skills/desk-health` instead of this project's copy.
+Keep the `desk-health/` folder where it is, one level inside the project folder. The runtime
+computes its project root as `desk-health/..`, so two moves break it:
+
+- **Dissolving `desk-health/`** (pulling `runtime/` and `seed/` up to the project root) points the
+  project root at the *parent* directory, so the skill folder is looked up outside the project.
+- **Putting `desk-health/` directly in `~`** makes that project root your home folder, so
+  `uninstall.sh` targets your *global* `~/.claude/skills/desk-health` instead of this copy.
 
 Your generated `config/`, `data/`, and `state/` are gitignored — your schedule, limitations, goal,
 and logs never get committed.

@@ -1,1 +1,15 @@
 .DS_Store
+
+# Desk Health Coach — per-viewer schedule/limitation/goal/behavior data and absolute-path
+# runtime state. The engine itself (desk-health/runtime/*.sh, *.js) and the seed catalogs stay
+# tracked and shared unchanged; only the paths below are ever viewer-specific or run-generated.
+desk-health/.staging/
+desk-health/config/
+desk-health/data/
+desk-health/state/
+desk-health/runtime/tick.log
+desk-health/runtime/*.log
+desk-health/runtime/mode
+desk-health/dashboard.html
+desk-health/coach-summary.json
+desk-health/installed-files.txt
