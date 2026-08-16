@@ -53,8 +53,8 @@ genuine ambiguity that would materially change the build. If more than one ambig
 collision exists, pre-compute the concrete resolved options and ask once, all together, as
 one-click choices — never resolve them one at a time across rounds.
 
-If the viewer requested extra rotation movements beyond the single vetted default per category
-(`runtime`'s built-in six-item catalog — see `library.md`), source each one now (reputable
+If the viewer requested extra rotation movements beyond the three vetted defaults per category
+(`runtime`'s built-in eighteen-item catalog — see `library.md`), source each one now (reputable
 public-health/occupational-health/clinical source, exact action, dose, restrictions, source URL,
 minSeconds) and fold that into the same batched readback-and-approval message — never a separate
 round per movement.
@@ -72,8 +72,8 @@ Write into `desk-health/.staging/config/`:
   `type\tmode\tcadenceMinutes\tphase\ttimes\tenabled\toptionId\tpriorityRank`, one row
   per the six fixed types (`eyes, neck-shoulders, wrists-hands, lower-back, standing, posture`).
   Leave `phase` at `0` for now — the collision check below computes and fills in the real value.
-- `library.tsv` — copy `desk-health/seed/library.tsv` (the tracked built-in six-item catalog —
-  see `library.md`), appending any approved extra movements from step 1. `config/` itself is
+- `library.tsv` — copy `desk-health/seed/library.tsv` (the tracked built-in eighteen-item catalog,
+  three per category — see `library.md`), appending any approved extra movements from step 1. `config/` itself is
   gitignored (per-viewer data), which is exactly why this seed copy exists outside it.
 - `messages.tsv` — copy `desk-health/seed/messages.tsv` (the tracked built-in milestone-message
   catalog) as-is unless the viewer asked for a different tone's variants.

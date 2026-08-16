@@ -28,8 +28,8 @@ next scheduled slot (derive from `routine.tsv` + `settings.tsv` — the same tim
 1. Load current `config/routine.tsv` + `config/library.tsv` (read-only, to build the proposal —
    never edit them in place).
 2. Build the proposed new routine row(s) in memory. For `add`/`change` referencing a movement
-   outside the six-item default catalog, route through `library.md`'s sourcing-and-approval flow
-   first.
+   outside the eighteen-item default catalog, route through `library.md`'s sourcing-and-approval
+   flow first.
 3. Write the candidate full routine to a scratch copy and run
    `desk-health/runtime/validate.sh <live|test>` is NOT for candidates — instead reuse the
    staging schema/collision logic by writing the candidate into `desk-health/.staging/config/`
