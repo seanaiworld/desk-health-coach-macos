@@ -69,12 +69,12 @@ and logs never get committed.
 | `/desk-health on\|off` | Turn a reminder type on or off |
 | `/desk-health more\|less` | Make a type more or less frequent |
 | `/desk-health add\|change` | Add or change a movement |
-| `/desk-health pause\|resume` | Pause reminders for a while, then resume |
-| `/desk-health how am I doing` | Coaching read on your logged behavior |
-| `/desk-health dashboard` | Regenerate and open the local dashboard |
-| `/desk-health undo` | Revert the last approved change |
-| `/desk-health start\|stop` | Start or stop the background agent |
-| `/desk-health uninstall` | Remove the LaunchAgent and installed files |
+| `/desk-health pause until 14:00` / `pause for 30m` / `resume` | Pause reminders until a time you give, then resume |
+| `/desk-health how am I doing` | Coaching read on your self-reported Done/Skip history |
+| `/desk-health dashboard` | Regenerate the local `dashboard.html` (opened only if you ask) |
+| `/desk-health undo` | Restore the single most recent approved change — one step, no deeper history |
+| `/desk-health stop\|start` | Unload the background agent, keeping every file / reload it |
+| `/desk-health uninstall` | Dry-run first, then remove the agent and installed files — your `data/` history is kept |
 
 Every change to your routine is shown to you — the affected row before/after, the new timeline, and
 the spacing/quiet-window checks — and waits for your explicit approval before it's applied.
